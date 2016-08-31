@@ -1,0 +1,79 @@
+*{margin: 0;padding: 0;}
+body{
+    font-family: "Microsoft YaHei";
+}
+li{
+    list-style: none;
+}
+p{
+    text-align: center;
+}
+.main,.content,.agreement{
+    margin: 0 25%;
+}
+.main{
+    width: 600px;height: 200px;
+    background: lightgrey;
+    position: absolute;
+}
+.main > p{
+    background: yellow;
+    height: 30px;
+    width: 200px;
+    margin: 30px 50px;
+    float: left;
+    text-align: center;
+    line-height: 30px;
+    cursor: pointer;
+}
+.content,.agreement{
+    width: 500px;
+    height: 500px;
+    background: #00CC00;
+    position: fixed;
+    left: 50px;
+    top: 50px;
+   
+
+}
+.close {
+    width: 20px;
+    height: 20px;
+    color: white;
+    position: absolute;
+    z-index: 1020;
+    right: 0;
+    top: 0;
+    text-align: center;
+    cursor: pointer;
+}
+.s1{
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+    cursor: pointer;
+}
+.info{
+    background: white;
+    cursor: pointer;
+    width: 200px;
+    height: 50px;
+    margin: auto;
+    text-align: center;
+    line-height: 50px;
+    margin: 40px auto;
+}
+.agreement p{
+    text-align: left;
+}
+.agreement{
+    opacity: 0.9;
+    background: gainsboro;
+}
+.hidde{
+    display: none;
+}
+.show{
+    display: block;
+    z-index: 1030;
+}

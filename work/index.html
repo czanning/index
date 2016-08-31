@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="jquery-1.12.3.min.js"></script>
+    <link rel="stylesheet" href="index.css"/>
+    <!--<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>-->
+</head>
+<body>
+<div class="main">
+    <p>登录</p>
+    <p>注册</p>
+</div>
+
+<div class="content hidde">
+    <p></p>
+    <div class="text"></div>
+    <span class="close">X</span>
+</div>
+
+<div class="agreement hidde">
+    <p></p>
+    <span class="close">X</span>
+</div>
+
+
+<script>
+    function cmd(x){
+        console.log(x);
+    }
+
+    function findInfo(){
+        $(".info").click(function(){
+            $.ajax({
+                type: "post",
+                url:pageUrl[2],
+                timeout:1000,
+                dataType: "html",
+                data:{id:$(this).index()},
+                success: function(data){
+                    $(".agreement>p").html(data);
+                }});
+
+            $(".agreement").removeClass("hidde").addClass("show");
+        })
+    }
+
+    $(function(){
+          pageUrl=({
+            '0':'login.php',
+            '1':'signup.php',
+            '2':'agreement.php'
+        });
+        var on;
+        $(".main>p").bind("click",function(){
+              on=pageUrl[$(this).index()];
+            $.ajax({
+                type: "post",
+                url:pageUrl[$(this).index()],
+                timeout:1000,
+                dataType: "html",
+                data:{id:$(this).index()},
+                success: function(data){
+                    var content= $(".content");
+                    content.removeClass("hidde").addClass("show");
+                    $(".content>p").html(data);
+                    cmd(data);
+                    findInfo();
+                },
+                error:function(){
+                    location.href=on;
+                }
+                });
+        });
+
+        $(".close").click(function(){
+            $(this).parent().removeClass("show").addClass("hidde");
+        });
+
+
+
+    })
+
+</script>
+</body>
+</html>
