@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <style>
+        .block,.small{
+
+        }
+        .block{
+            width: 100px;
+            height: 100px;
+            background: yellow;
+            position: absolute;
+        }
+        .small{
+            width: 20px;
+            height: 20px;
+            background: red;
+            position: absolute;
+
+        }
+        .small:nth-child(2), .small:nth-child(4){
+            float: right;
+
+        }
+        .small:nth-child(1),.small:nth-child(2){
+            top: 0;
+        }
+        .small:nth-child(3),.small:nth-child(4){
+            bottom: 0;
+        }
+        .small:nth-child(2),.small:nth-child(4){
+            right: 0;
+        }
+        .small:nth-child(1), .small:nth-child(3){
+
+            float: left;
+
+        }
+        .boy{
+            width: 20px;
+            height: 20px;
+            position: absolute;
+            background: black;
+            /*margin: 35px auto;*/
+            left: 50%;
+            top: 50%;
+            margin-left:-10px;
+            margin-top:-10px;
+
+        }
+    </style>
+</head>
+<body>
+<div class="block">
+    <div class="small"></div>
+    <div class="small"></div>
+    <div class="small"></div>
+    <div class="small"></div>
+
+    <div class="boy"></div>
+</div>
+</body>
+</html>
